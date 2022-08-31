@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 11:15:23 by mbertin           #+#    #+#             */
-/*   Updated: 2022/08/31 11:11:11 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/08/31 15:14:00 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,29 @@ void	ft_mlx_put(t_map *map)
 	map->win = mlx_new_window(map->mlx, ((ft_strlen(map->map[0]) - 1) * 64),
 			map->x * 64, "so_long");
 	image_to_window(map);
+	move_str(map);
 	mlx_hook(map->win, 2, 1L << 0, key_identification, map);
 	mlx_hook(map->win, 17, 0, esc_game, map);
 	mlx_loop(map->mlx);
+}
+
+void	move_str(t_map *map)
+{
+	char	*temp;
+
+	map->move_str = " MOVES";
+	temp = ft_itoa(map->move_index);
+	map->move_str = ft_strjoin(temp, map->move_str);
+	free (temp);
+	mlx_string_put(map->mlx, map->win, 0, 0, 0x00FF0000, map->move_str);
+	free (map->move_str);
 }
 
 int	main(int argc, char const *argv[])
 {
 	t_map	map;
 
+	map.move_index = 0;
 	check_arg(&argc, argv[1]);
 	map.fd = open(argv[1], O_RDONLY);
 	if (map.fd < 0)
@@ -74,6 +88,7 @@ int	main(int argc, char const *argv[])
 	ft_mlx_put(&map);
 	return (0);
 }
+
 
 /*
 	Je dois faire des malloc pour chaque ligne de mon tableau !!!

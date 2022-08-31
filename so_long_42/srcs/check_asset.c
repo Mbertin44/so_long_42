@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 12:24:53 by mbertin           #+#    #+#             */
-/*   Updated: 2022/08/30 15:19:46 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/08/31 15:37:46 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	check_unknow_set(t_map *map)
 
 	i = 0;
 	j = 0;
-	set = "01CEP";
+	set = "01CEPX";
 	while (i < map->x - 1)
 	{
 		while (j < ft_strlen(map->map[0]) - 1)

@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 10:52:14 by mbertin           #+#    #+#             */
-/*   Updated: 2022/08/31 11:16:15 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/08/31 15:09:18 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,3 @@ void	check_wall_vertical(t_map *map)
 		i++;
 	}
 }
-/*
-	ATTENTION : Si je veux réutiliser x du début, n'oublie pas de le repasser à
-	 0 dans la fonction !!!
-*/

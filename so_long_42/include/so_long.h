@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:05:26 by mbertin           #+#    #+#             */
-/*   Updated: 2022/08/31 11:26:56 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/08/31 16:00:01 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_map
 	void		*wooden;
 	void		*wall;
 	void		*coin;
+	void		*villain;
 	void		*mlx;
 	char		*addr;
 	void		*win;
@@ -40,7 +41,8 @@ typedef struct s_map
 	int			pos_y;
 	int			i;
 	size_t		j;
-	int			count_move;
+	int			move_index;
+	char		*move_str;
 }	t_map;
 
 /*
@@ -64,6 +66,8 @@ void	xpm_to_image(t_map *map);
 void	image_to_window(t_map *map);
 void	image_to_window_part_two(t_map *map);
 int		key_identification(int key, t_map *map);
+int		key_identification_part_two(int key, t_map *map);
+int		key_identification_part_three(int key, t_map *map);
 int		esc_game(void);
 void	check_right(t_map *map);
 void	check_left(t_map *map);
@@ -74,5 +78,14 @@ void	move_left(t_map *map);
 void	move_up(t_map *map);
 void	move_down(t_map *map);
 void	win_game(void);
+void	move_str(t_map *map);
+void	check_right_villain(t_map *map);
+void	check_left_villain(t_map *map);
+void	check_up_villain(t_map *map);
+void	check_down_villain(t_map *map);
+void	move_right_villain(t_map *map);
+void	move_left_villain(t_map *map);
+void	move_down_villain(t_map *map);
+void	move_up_villain(t_map *map);
 
 #endif

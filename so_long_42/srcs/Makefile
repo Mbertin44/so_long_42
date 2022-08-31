@@ -6,7 +6,7 @@
 #    By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 13:53:50 by mbertin           #+#    #+#              #
-#    Updated: 2022/08/30 15:15:47 by mbertin          ###   ########.fr        #
+#    Updated: 2022/08/31 16:02:07 by mbertin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ SRCS		=	so_long.c		\
 				move_player.c	\
 				check_move_player.c	\
 				end_of_game.c	\
+				villain_move.c	\
+				key_identification.c	\
 
 OBJS		= 	${SRCS:.c=.o}
 

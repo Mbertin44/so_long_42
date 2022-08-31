@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:00:56 by mbertin           #+#    #+#             */
-/*   Updated: 2022/08/30 14:14:48 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/08/31 15:08:15 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ void	xpm_to_image(t_map *map)
 			&map->img_height);
 		map->coin = mlx_xpm_file_to_image(map->mlx,
 			"../Image/xpm/bag_coin.xpm", &map->img_width,
+			&map->img_height);
+		map->villain = mlx_xpm_file_to_image(map->mlx,
+			"../Image/xpm/villain.xpm", &map->img_width,
 			&map->img_height);
 }
 
@@ -94,24 +97,10 @@ void	image_to_window_part_two(t_map *map)
 			map->open_door, map->pos_x, map->pos_y);
 		map->pos_x += 64;
 	}
+	if (map->map[map->i][map->j] == 'X')
+	{
+		mlx_put_image_to_window(map->mlx, map->win,
+			map->villain, map->pos_x, map->pos_y);
+		map->pos_x += 64;
+	}
 }
-
-/*
-	Pour image_to_window, je dois faire une fonction qui incrémente map->index_c à chaque fois que la slim ramasse un sac
-	d'argent, pour en suite pouvoir comparer le resultat avec map->c
-*/
-// int	close_game(int key, t_map *map)
-// {
-// 	if (key == 13)
-// 	{
-// 		printf("You exit the game ! Go back to work ...\n");
-// 		exit (1);
-// 		mlx_destroy_window(map->mlx, map->win);
-// 	}
-// 	else
-// 	{
-// 		printf("You exit the game ! Go back to work ...\n");
-// 		exit (1);
-// 	}
-// 	return (0);
-// }

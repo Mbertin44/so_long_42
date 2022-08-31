@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momo <momo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 11:15:23 by mbertin           #+#    #+#             */
-/*   Updated: 2022/08/30 17:32:09 by momo             ###   ########.fr       */
+/*   Updated: 2022/08/31 11:11:11 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	check_all_map(t_map *map, char const *argv[])
 	check_error_number_set(map);
 }
 
-void	ft_graphic_put(t_map *map)
+void	ft_mlx_put(t_map *map)
 {
 	map->i = -1;
 	map->j = 0;
@@ -67,18 +67,11 @@ int	main(int argc, char const *argv[])
 	t_map	map;
 
 	check_arg(&argc, argv[1]);
-	//map = malloc(sizeof(t_map));
-	/*if (!map)
-	{
-		free (map);
-		return (0);
-	}*/
 	map.fd = open(argv[1], O_RDONLY);
 	if (map.fd < 0)
 		exit (0);
 	check_all_map(&map, argv);
-	ft_graphic_put(&map);
-	//free (map.map);
+	ft_mlx_put(&map);
 	return (0);
 }
 

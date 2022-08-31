@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 10:52:14 by mbertin           #+#    #+#             */
-/*   Updated: 2022/08/30 15:37:58 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/08/31 11:16:15 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,9 @@ void	size_map_vertical(t_map *map)
 
 void	print_map(t_map *map)
 {
-	map->map = malloc(sizeof(char *) * map->x + 1);
+	map->map = malloc(sizeof(char **) * map->x + 1);
 	if (!map->map)
-	{
-		free (map->map);
 		exit (1);
-	}
 	map->x = 0;
 	map->map[map->x] = get_next_line(map->fd);
 	printf("%s", map->map[map->x]);
@@ -48,14 +45,10 @@ void	print_map(t_map *map)
 		map->x++;
 		map->map[map->x] = get_next_line(map->fd);
 		if (map->map[map->x] == NULL)
-		{
-			free (map->map[map->x]);
 			break ;
-		}
 		printf("%s", map->map[map->x]);
 	}
 	printf("\n");
-	free (map->map[map->x]);
 }
 
 void	check_rectangle(t_map *map)

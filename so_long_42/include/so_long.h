@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momo <momo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:05:26 by mbertin           #+#    #+#             */
-/*   Updated: 2022/08/30 17:32:09 by momo             ###   ########.fr       */
+/*   Updated: 2022/08/31 11:26:56 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_map
 	int			pos_y;
 	int			i;
 	size_t		j;
+	int			count_move;
 }	t_map;
 
 /*
@@ -58,7 +59,7 @@ void	check_unknow_set(t_map *map);
 void	count_set(t_map *map);
 void	check_error_number_set(t_map *map);
 void	check_arg(int *argc, char const *argv);
-void	ft_graphic_put(t_map *map);
+void	ft_mlx_put(t_map *map);
 void	xpm_to_image(t_map *map);
 void	image_to_window(t_map *map);
 void	image_to_window_part_two(t_map *map);

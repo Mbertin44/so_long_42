@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 11:15:23 by mbertin           #+#    #+#             */
-/*   Updated: 2022/08/31 15:14:00 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/08/31 16:05:24 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,3 @@ int	main(int argc, char const *argv[])
 	ft_mlx_put(&map);
 	return (0);
 }
-
-
-/*
-	Je dois faire des malloc pour chaque ligne de mon tableau !!!
-	Je dois malloc ma struct !!!
-
-	- Faire une condition pour que la slim ne puisse pas aller sur la porte si c != 0
-
-	OUBLIE PAS !!!! :
-	-	Change ton makefile pour faire fonctionner la mlx !!!
-*/

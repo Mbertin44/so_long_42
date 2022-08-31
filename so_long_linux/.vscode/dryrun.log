@@ -1,0 +1,11 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/mbertin/Desktop/so_long'
+gcc -Wall -Werror -Wextra   -c -o so_long.o so_long.c
+gcc -Wall -Werror -Wextra   -c -o check_map.o check_map.c
+echo "Compiling libft..."
+echo "libft compiled successfully."
+echo "Compiling so_long sources"
+gcc -Wall -Werror -Wextra so_long.o check_map.o include/libft.a -o so_long
+echo "Done !"
+make: Leaving directory `/Users/mbertin/Desktop/so_long'
+ 

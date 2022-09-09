@@ -6,11 +6,11 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 15:16:14 by mbertin           #+#    #+#             */
-/*   Updated: 2022/09/01 09:34:22 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/09/06 08:42:55 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "include/so_long.h"
 
 void	move_right(t_map *map)
 {

@@ -11,14 +11,14 @@
 # **************************************************************************** #
 
 NAME		=	so_long
-LIBFT_PATH		=	../libft
-LIBFT		=	../libft/libft.a
+LIBFT_PATH	=	libft
+LIBFT		=	libft/libft.a
 
-CC			=	gcc
+CC		=	gcc
 CFLAGS		=	-Wall -Werror -Wextra
-RM			=	rm -f
+RM		=	rm -f
 
-SRCS		=	so_long.c		\
+SRCS		=		so_long.c		\
 				check_map.c		\
 				check_asset.c	\
 				init_game.c	\

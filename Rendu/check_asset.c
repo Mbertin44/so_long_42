@@ -6,11 +6,11 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 12:24:53 by mbertin           #+#    #+#             */
-/*   Updated: 2022/09/01 09:54:11 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/09/06 08:42:18 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "include/so_long.h"
 
 void	check_unknow_set(t_map *map)
 {

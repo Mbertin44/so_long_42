@@ -6,11 +6,11 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 16:07:25 by mbertin           #+#    #+#             */
-/*   Updated: 2022/09/01 09:34:20 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/09/06 08:42:57 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "include/so_long.h"
 
 void	move_right_villain(t_map *map)
 {

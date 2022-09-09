@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   end_of_game.c                                      :+:      :+:    :+:   */
+/*   check_valid_path.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 14:38:47 by mbertin           #+#    #+#             */
-/*   Updated: 2022/09/01 09:34:28 by mbertin          ###   ########.fr       */
+/*   Created: 2022/09/02 11:04:09 by mbertin           #+#    #+#             */
+/*   Updated: 2022/09/02 11:35:38 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	win_game(void)
+void	check_valip_path(t_map *map)
 {
-	printf("YOU WIN !\n");
-	exit (0);
-}
+	int	i;
+	int	j;
 
-int	esc_game(void)
-{
-	printf("You have clicked on the cross to quit the game! Go to work...\n");
-	exit (0);
-}
+	i = 0;
+	j = 0;
+	while (i != map->c)
+	{
 
-void	game_over(void)
-{
-	printf("You hit a villain. Open your eyes ?\n");
-	exit(0);
+	}
+
 }

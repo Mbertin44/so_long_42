@@ -6,11 +6,11 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 10:52:14 by mbertin           #+#    #+#             */
-/*   Updated: 2022/09/01 11:59:27 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/09/06 08:42:30 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "include/so_long.h"
 
 void	size_map_vertical(t_map *map)
 {

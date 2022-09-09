@@ -6,11 +6,11 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:00:56 by mbertin           #+#    #+#             */
-/*   Updated: 2022/09/01 09:46:34 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/09/06 08:50:41 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "include/so_long.h"
 
 void	ft_mlx_put(t_map *map)
 {
@@ -32,28 +32,28 @@ void	ft_mlx_put(t_map *map)
 void	xpm_to_image(t_map *map)
 {
 		map->wooden = mlx_xpm_file_to_image(map->mlx,
-			"../../Image/xpm/wooden.xpm", &map->img_width,
+			"Image/xpm/wooden.xpm", &map->img_width,
 			&map->img_height);
 		map->close_door = mlx_xpm_file_to_image(map->mlx,
-			"../../Image/xpm/close_door.xpm", &map->img_width,
+			"Image/xpm/close_door.xpm", &map->img_width,
 			&map->img_height);
 		map->open_door = mlx_xpm_file_to_image(map->mlx,
-			"../../Image/xpm/open_door.xpm", &map->img_width,
+			"Image/xpm/open_door.xpm", &map->img_width,
 			&map->img_height);
 		map->close_door = mlx_xpm_file_to_image(map->mlx,
-			"../../Image/xpm/close_door.xpm", &map->img_width,
+			"Image/xpm/close_door.xpm", &map->img_width,
 			&map->img_height);
 		map->slime = mlx_xpm_file_to_image(map->mlx,
-			"../../Image/xpm/slime.xpm", &map->img_width,
+			"Image/xpm/slime.xpm", &map->img_width,
 			&map->img_height);
 		map->wall = mlx_xpm_file_to_image(map->mlx,
-			"../../Image/xpm/wall.xpm", &map->img_width,
+			"Image/xpm/wall.xpm", &map->img_width,
 			&map->img_height);
 		map->coin = mlx_xpm_file_to_image(map->mlx,
-			"../../Image/xpm/bag_coin.xpm", &map->img_width,
+			"Image/xpm/bag_coin.xpm", &map->img_width,
 			&map->img_height);
 		map->villain = mlx_xpm_file_to_image(map->mlx,
-			"../../Image/xpm/villain.xpm", &map->img_width,
+			"Image/xpm/villain.xpm", &map->img_width,
 			&map->img_height);
 }
 

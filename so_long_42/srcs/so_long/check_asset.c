@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 12:24:53 by mbertin           #+#    #+#             */
-/*   Updated: 2022/09/01 09:54:11 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/09/02 11:33:31 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,11 @@ void	count_set(t_map *map)
 			if (map->map[x][y] == 'C')
 				map->c++;
 			if (map->map[x][y] == 'P')
+			{
 				map->p++;
+				map->pos_player_x = x;
+				map->pos_player_y = y;
+			}
 			if (map->map[x][y] == 'E')
 				map->e++;
 			y++;

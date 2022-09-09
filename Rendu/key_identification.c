@@ -6,11 +6,11 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 15:55:30 by mbertin           #+#    #+#             */
-/*   Updated: 2022/09/01 09:34:24 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/09/06 08:42:44 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "include/so_long.h"
 
 int	key_identification(int key, t_map *map)
 {

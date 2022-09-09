@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:05:26 by mbertin           #+#    #+#             */
-/*   Updated: 2022/09/01 09:08:03 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/09/02 11:30:48 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_map
 	int			img_height;
 	int			pos_x;
 	int			pos_y;
+	int			pos_player_x;
+	int			pos_player_y;
 	int			i;
 	size_t		j;
 	int			move_index;

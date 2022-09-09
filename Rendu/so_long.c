@@ -6,11 +6,11 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 11:15:23 by mbertin           #+#    #+#             */
-/*   Updated: 2022/09/01 09:51:48 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/09/06 08:43:14 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#include "include/so_long.h"
 
 void	check_arg(int *argc, char const *argv)
 {

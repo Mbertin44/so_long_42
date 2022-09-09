@@ -6,7 +6,7 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:05:26 by mbertin           #+#    #+#             */
-/*   Updated: 2022/09/01 09:37:13 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/09/06 08:43:52 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include <mlx.h>
-# include "../srcs/libft/libft.h"
+# include "../libft/libft.h"
 
 typedef struct s_map
 {

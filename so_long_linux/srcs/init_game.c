@@ -3,14 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   init_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: momo <momo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:00:56 by mbertin           #+#    #+#             */
-/*   Updated: 2022/08/30 14:14:48 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/09/11 11:05:33 by momo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+void	ft_mlx_put(t_map *map)
+{
+	map->i = -1;
+	map->j = 0;
+	map->pos_x = 0;
+	map->pos_y = 0;
+	map->mlx = mlx_init();
+	xpm_to_image(map);
+	map->win = mlx_new_window(map->mlx, ((ft_strlen(map->map[0]) - 1) * 64),
+			map->x * 64, "so_long");
+	image_to_window(map);
+	move_str(map);
+	mlx_hook(map->win, 2, 1L << 0, key_identification, map);
+	mlx_hook(map->win, 17, 0, esc_game, map);
+	mlx_loop(map->mlx);
+}
 
 void	xpm_to_image(t_map *map)
 {
@@ -35,17 +52,20 @@ void	xpm_to_image(t_map *map)
 		map->coin = mlx_xpm_file_to_image(map->mlx,
 			"../Image/xpm/bag_coin.xpm", &map->img_width,
 			&map->img_height);
+		map->villain = mlx_xpm_file_to_image(map->mlx,
+			"../Image/xpm/villain.xpm", &map->img_width,
+			&map->img_height);
 }
 
 void	image_to_window(t_map *map)
 {
-	map->i = 0;
+	map->i = -1;
 	map->pos_y = 0;
-	while (map->i < map->x)
+	while (++map->i < map->x)
 	{
 		map->pos_x = 0;
-		map->j = 0;
-		while (map->j < ft_strlen(map->map[0]) - 1)
+		map->j = -1;
+		while (++map->j < ft_strlen(map->map[0]) - 1)
 		{
 			if (map->map[map->i][map->j] == '1')
 			{
@@ -61,9 +81,7 @@ void	image_to_window(t_map *map)
 			}
 			else
 				image_to_window_part_two(map);
-			map->j++;
 		}
-		map->i++;
 		map->pos_y += 64;
 	}
 }
@@ -88,30 +106,21 @@ void	image_to_window_part_two(t_map *map)
 			map->close_door, map->pos_x, map->pos_y);
 		map->pos_x += 64;
 	}
+	image_to_window_part_three(map);
+}
+
+void	image_to_window_part_three(t_map *map)
+{
 	if (map->map[map->i][map->j] == 'E' && map->c == 0)
 	{
 		mlx_put_image_to_window(map->mlx, map->win,
 			map->open_door, map->pos_x, map->pos_y);
 		map->pos_x += 64;
 	}
+	if (map->map[map->i][map->j] == 'X')
+	{
+		mlx_put_image_to_window(map->mlx, map->win,
+			map->villain, map->pos_x, map->pos_y);
+		map->pos_x += 64;
+	}
 }
-
-/*
-	Pour image_to_window, je dois faire une fonction qui incrémente map->index_c à chaque fois que la slim ramasse un sac
-	d'argent, pour en suite pouvoir comparer le resultat avec map->c
-*/
-// int	close_game(int key, t_map *map)
-// {
-// 	if (key == 13)
-// 	{
-// 		printf("You exit the game ! Go back to work ...\n");
-// 		exit (1);
-// 		mlx_destroy_window(map->mlx, map->win);
-// 	}
-// 	else
-// 	{
-// 		printf("You exit the game ! Go back to work ...\n");
-// 		exit (1);
-// 	}
-// 	return (0);
-// }

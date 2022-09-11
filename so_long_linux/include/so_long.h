@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: momo <momo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:05:26 by mbertin           #+#    #+#             */
-/*   Updated: 2022/08/30 17:31:35 by momo             ###   ########.fr       */
+/*   Updated: 2022/09/06 08:43:52 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include <mlx.h>
-# include "libft.h"
+# include "../libft/libft.h"
 
 typedef struct s_map
 {
@@ -31,6 +31,7 @@ typedef struct s_map
 	void		*wooden;
 	void		*wall;
 	void		*coin;
+	void		*villain;
 	void		*mlx;
 	char		*addr;
 	void		*win;
@@ -40,6 +41,8 @@ typedef struct s_map
 	int			pos_y;
 	int			i;
 	size_t		j;
+	int			move_index;
+	char		*move_str;
 }	t_map;
 
 /*
@@ -58,11 +61,14 @@ void	check_unknow_set(t_map *map);
 void	count_set(t_map *map);
 void	check_error_number_set(t_map *map);
 void	check_arg(int *argc, char const *argv);
-void	ft_graphic_put(t_map *map);
+void	ft_mlx_put(t_map *map);
 void	xpm_to_image(t_map *map);
 void	image_to_window(t_map *map);
 void	image_to_window_part_two(t_map *map);
+void	image_to_window_part_three(t_map *map);
 int		key_identification(int key, t_map *map);
+int		key_identification_part_two(int key, t_map *map);
+int		key_identification_part_three(int key, t_map *map);
 int		esc_game(void);
 void	check_right(t_map *map);
 void	check_left(t_map *map);
@@ -73,5 +79,15 @@ void	move_left(t_map *map);
 void	move_up(t_map *map);
 void	move_down(t_map *map);
 void	win_game(void);
+void	move_str(t_map *map);
+void	check_right_villain(t_map *map);
+void	check_left_villain(t_map *map);
+void	check_up_villain(t_map *map);
+void	check_down_villain(t_map *map);
+void	move_right_villain(t_map *map);
+void	move_left_villain(t_map *map);
+void	move_down_villain(t_map *map);
+void	move_up_villain(t_map *map);
+void	game_over(void);
 
 #endif

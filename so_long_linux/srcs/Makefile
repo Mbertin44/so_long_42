@@ -6,39 +6,41 @@
 #    By: momo <momo@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 13:53:50 by mbertin           #+#    #+#              #
-#    Updated: 2022/08/30 17:30:26 by momo             ###   ########.fr        #
+#    Updated: 2022/09/11 11:03:40 by momo             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	so_long
-LIBFT		=	../include/libft.a
+LIBFT_PATH	=	../libft
+LIBFT		=	../libft/libft.a
 
-CC			=	gcc
+CC		=	gcc
 CFLAGS		=	-Wall -Werror -Wextra
-RM			=	rm -f
+RM		=	rm -f
 
-SRCS		=	so_long.c		\
+SRCS		=		so_long.c		\
 				check_map.c		\
 				check_asset.c	\
 				init_game.c	\
 				move_player.c	\
 				check_move_player.c	\
 				end_of_game.c	\
+				check_move_villain.c	\
+				move_villain.c	\
+				key_identification.c	\
 
 OBJS		= 	${SRCS:.c=.o}
 
-# Targets
-
 .c.o:
-	$(CC) $(CFLAGS) -Imlx -c $< -o $(<:.c=.o)
+				@$(CC) $(CFLAGS) -Imlx -c $< -o $(<:.c=.o)
 
 $(NAME): 		$(OBJS)
 				@echo "Compiling libft..."
+				@$(MAKE) -C $(LIBFT_PATH)
 				@echo "libft compiled successfully."
 				@echo "Compiling $(NAME) sources"
 				@$(CC) -g $(OBJS) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) $(LIBFT)
 #				@$(CC) $(OBJS) $(LIBFT) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
-#				@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 				@echo "Done !"
 
 all: 			$(NAME)
@@ -48,6 +50,7 @@ clean:
 				@echo "Removing $(NAME) objects..."
 				@$(RM) $(OBJS)
 				@echo "Removing libft objects..."
+				@make clean -C $(LIBFT_PATH)
 				@echo "$(NAME) objects successfully deleted."
 				@echo "libft objects successfully deleted."
 
@@ -56,7 +59,7 @@ fclean: 		clean
 				@echo "Removing $(NAME) program..."
 				@$(RM) $(NAME)
 				@echo "Removing libft archive..."
-#				@$(RM) $(LIBFT)
+				@$(RM) $(LIBFT)
 				@echo "Executable(s) and archive(s) successfully deleted."
 
 # Removes objects and executable then remakes all

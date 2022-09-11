@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_asset.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: momo <momo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 12:24:53 by mbertin           #+#    #+#             */
-/*   Updated: 2022/08/30 15:19:46 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/09/11 11:00:15 by momo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	check_unknow_set(t_map *map)
 
 	i = 0;
 	j = 0;
-	set = "01CEP";
+	set = "01CEPX";
 	while (i < map->x - 1)
 	{
 		while (j < ft_strlen(map->map[0]) - 1)
@@ -78,7 +78,7 @@ void	check_error_number_set(t_map *map)
 	}
 	if (map->p != 1)
 	{
-		printf("Error\nThere should only be ONE starting point");
+		printf("Error\nThere should be ONE starting point");
 		exit (1);
 	}
 }

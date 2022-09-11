@@ -3,26 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: momo <momo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 12:08:19 by mbertin           #+#    #+#             */
-/*   Updated: 2022/08/17 13:45:52 by mbertin          ###   ########.fr       */
+/*   Updated: 2022/09/11 11:01:37 by momo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
-# endif
-
 # include<stdlib.h>
 # include<unistd.h>
-# include <fcntl.h>
-# include <limits.h>
 # include<stdio.h>
-# include<stdarg.h>
+# include "get_next_line.h"
+# include "printf.h"
+# include <stdint.h>
 
 int		ft_atoi(const char *str);
 int		ft_isalnum(int c);
@@ -44,9 +40,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(char const *src, char const *set);
-char	*get_next_line(int fd);
-char	*ft_strchr_gnl(const char *s, int c);
-char	*ft_strjoin_gnl(char *s1, char *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 void	ft_bzero(void *s, size_t n);

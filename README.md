@@ -51,5 +51,6 @@ Ce projet m'a permis d'apprendre à utiliser la bibliothèque graphique Minilibx
 
 J'espère que ce projet pourra être utile à d'autres personnes qui souhaitent apprendre à créer des jeux en utilisant la bibliothèque graphique Minilibx.
 
-Merci à [byaliego](https://github.com/byaliego) pour les badges de projet.
+## Remerciement
+Merci à [byaliego](https://github.com/byaliego) pour le badge de projet.
 

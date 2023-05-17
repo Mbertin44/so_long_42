@@ -37,6 +37,7 @@ Le jeu se lancera et vous pourrez interagir avec lui en utilisant les touches W,
 Vous pouvez aussi fournir votre propre carte, temps que celle-ci est composé des éléments suivant :
 - Un caractère pour le joueur `P`.
 - Un caractère pour la sortie `E`.
+- Un caractère pour les ennemis `X`.
 - La carte est entouré de mur avec le caractère `1`.
 
 ## Bonus

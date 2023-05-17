@@ -6,14 +6,14 @@
 /*   By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:05:26 by mbertin           #+#    #+#             */
-/*   Updated: 2022/09/06 08:43:52 by mbertin          ###   ########.fr       */
+/*   Updated: 2023/05/17 09:25:49 by mbertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include <mlx.h>
+# include "../mlx/mlx.h"
 # include "../libft/libft.h"
 
 typedef struct s_map

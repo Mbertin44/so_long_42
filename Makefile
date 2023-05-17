@@ -6,12 +6,13 @@
 #    By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 13:53:50 by mbertin           #+#    #+#              #
-#    Updated: 2022/09/01 12:13:42 by mbertin          ###   ########.fr        #
+#    Updated: 2023/05/17 10:36:54 by mbertin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	so_long
 LIBFT_PATH	=	libft
+MLX_PATH	=	mlx
 LIBFT		=	libft/libft.a
 
 CC		=	gcc
@@ -36,10 +37,13 @@ OBJS		= 	${SRCS:.c=.o}
 
 $(NAME): 		$(OBJS)
 				@echo "Compiling libft..."
-				@$(MAKE) -C $(LIBFT_PATH)
+				@$(MAKE) -C $(LIBFT_PATH) &> /dev/null
 				@echo "libft compiled successfully."
+				@echo "Compiling mlx..."
+				@$(MAKE) -C $(MLX_PATH) &> /dev/null
+				@echo "mlx compiled successfully."
 				@echo "Compiling $(NAME) sources"
-				@$(CC) $(OBJS) $(LIBFT) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+				@$(CC) $(OBJS) $(LIBFT) $(CFLAGS) mlx/libmlx.a -framework OpenGL -framework AppKit -o $(NAME)
 				@echo "Done !"
 
 all: 			$(NAME)
@@ -50,8 +54,11 @@ clean:
 				@$(RM) $(OBJS)
 				@echo "Removing libft objects..."
 				@make clean -C $(LIBFT_PATH)
+				@echo "Removing mlx objects..."
+				@make clean -C $(MLX_PATH)
 				@echo "$(NAME) objects successfully deleted."
 				@echo "libft objects successfully deleted."
+				@echo "mlx objects successfully deleted."
 
 # Removes objects and executable
 fclean: 		clean

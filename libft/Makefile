@@ -6,7 +6,7 @@
 #    By: mbertin <mbertin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 13:53:50 by mbertin           #+#    #+#              #
-#    Updated: 2022/04/25 09:10:32 by mbertin          ###   ########.fr        #
+#    Updated: 2023/05/17 10:35:17 by mbertin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,20 +26,20 @@ AR = ar rcs
 
 CC = gcc
 
-RM = rm -f 
+RM = rm -f
 
 CFLAGS = -Wall -Werror -Wextra
 
 all: ${NAME}
 
-${NAME}: ${OBJS} 
-	${AR} ${NAME} ${OBJS}
+${NAME}: ${OBJS}
+	@${AR} ${NAME} ${OBJS}
 
-clean: 
-	${RM} ${OBJS}
+clean:
+	@${RM} ${OBJS}
 
 fclean: clean
-	${RM} ${NAME}
+	@${RM} ${NAME}
 
 re: fclean all
 
